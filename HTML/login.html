@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login - Estilo Flutter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/login.css"> <!-- Link para o arquivo CSS -->
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <p>Entre com seu usuário e senha</p> <!-- Frase adicionada -->
+        <form id="loginForm">
+            <input type="email" id="email" class="input-field" placeholder="Email" required>
+            <input type="password" id="senha" class="input-field" placeholder="Senha" required>
+            <button type="submit" class="login-btn">Entrar</button>
+            <a href="#" class="forgot-password">Esqueceu a senha?</a>
+            <div id="erro" class="error"></div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const erroDiv = document.getElementById('erro');
+
+            // Validação simples
+            if (email === '' || senha === '') {
+                erroDiv.textContent = 'Por favor, preencha todos os campos.';
+            } else {
+                erroDiv.textContent = '';
+                alert('Login bem-sucedido!');
+                // Aqui você pode adicionar o redirecionamento ou outra lógica necessária.
+            }
+        });
+    </script>
+
+</body>
+</html>
